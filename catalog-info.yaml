@@ -1,0 +1,23 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: JSP-test1-03-06
+  annotations:
+    github.com/project-slug: BackstageSSPPoC/JSP-test1-03-06
+    backstage.io/techdocs-ref: dir:.
+    backstage.io/kubernetes-id: JSP-test1-03-06
+    sonarqube.org/project-key: jsp-test1-03-06
+    jenkins.io/job-full-name: Backstage_SSP_PoC/JSP-test1-03-06/main
+    argocd/app-name: jsp-test1-03-06-dev
+    prometheus.io/rule: "kube_pod_container_resource_requests{pod=~'jsp-test1-03-06.*'}|resource,kube_pod_container_status_restarts_total{pod=~'jsp-test1-03-06.*'}|container"
+    prometheus.io/alert: "KubePodCrashLooping,KubeDeploymentReplicasMismatch,KubePodNotReady,KubeContainerWaiting,KubeContainerOOMKilled,KubeDeploymentRolloutStuck"
+    prometheus.io/labels: "namespace=dev"
+    grafana/overview-dashboard: 'http://34.30.183.34/grafana/d/ad84zrr/service-overview-template?var-pod_prefix=jsp-test1-03-06&var-namespace=dev'
+  tags:
+    - java-maven
+    - scaffolded
+spec:
+  type: service
+  lifecycle: Dev
+  owner: user:default/chaitanya-shekhar-pandey
+  system: dssp-platform
