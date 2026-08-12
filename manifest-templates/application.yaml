@@ -10,7 +10,7 @@ spec:
     targetRevision: main
     path: apps/${APP_NAME}/${NAMESPACE}
   destination:
-    name: ${TARGET_CLUSTER}
+    name: in-cluster
     namespace: ${NAMESPACE}
   syncPolicy:
     automated:
