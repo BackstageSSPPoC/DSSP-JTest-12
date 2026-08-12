@@ -10,6 +10,7 @@ pipeline {
     
     tools {
         maven 'Maven3'
+        jdk 'JDK17'
     }
 
     environment {
@@ -66,6 +67,8 @@ pipeline {
         stage('Build') {
             steps {
                 sh '''
+                echo "JAVA_HOME=$JAVA_HOME"
+                which javac
                 mvn clean package -DskipTests -B
                 '''
             }
