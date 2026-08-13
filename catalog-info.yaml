@@ -12,12 +12,12 @@ metadata:
     prometheus.io/rule: "kube_pod_status_phase{pod=~'dssp-jtest-12.*'}|phase,kube_pod_container_status_restarts_total{pod=~'dssp-jtest-12.*'}|container"
     prometheus.io/alert: "KubePodCrashLooping,KubeDeploymentReplicasMismatch,KubePodNotReady,KubeContainerWaiting,KubeContainerOOMKilled,KubeDeploymentRolloutStuck"
     prometheus.io/labels: "namespace=dev"
-    grafana/overview-dashboard: 'http://34.29.242.32/grafana/d/ffuuiuytw0f0gb/backstage-view?var-pod_prefix=${repoName.toLowerCase()}&var-namespace=${environment.toLowerCase()}'
+    grafana/overview-dashboard: 'http://34.30.183.34/grafana/d/ffuuiuytw0f0gb/backstage-view?var-pod_prefix=${repoName.toLowerCase()}&var-namespace=${environment.toLowerCase()}'
   tags:
     - java-maven
     - scaffolded
 spec:
   type: service
   lifecycle: Dev
-  owner: user:default/chaitanyashekharpandey-20
+  owner: user:default/chaitanya-shekhar-pandey
   system: dssp-platform
